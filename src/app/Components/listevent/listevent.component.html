@@ -1,0 +1,10 @@
+<div class="container-fluid">
+<table>
+    <tr>
+        <th>Event Id</th><th>Event Title</th><th>Event Venue</th><th>Teams Playing</th><th>Ticket Availability</th>
+    </tr>
+    <tr *ngFor="let evnt of matchevent">
+        <td>{{evnt.eventId}}</td><td>{{evnt.title}}</td><td>{{evnt.venue}}</td><td>{{evnt.teamsPlaying}}</td><td>{{evnt.ticketAvailability}}</td>
+    </tr>
+</table>
+</div>

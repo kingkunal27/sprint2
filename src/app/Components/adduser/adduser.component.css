@@ -1,0 +1,59 @@
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+  margin: 0;
+}
+
+.form-container {
+  border: 1px solid #fff; /* White border */
+  padding: 20px;
+  width: 300px; /* Adjust the width as needed */
+  background-color: #333; /* Dark background color */
+  margin-top: 50px;
+}
+
+.form-label {
+  color: #ffcc00; /* White text color for labels */
+}
+
+.form-control {
+  width: 100%;
+  background-color: #555;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #ffcc00;
+  background-color: #ffcc00; /* Yellow background color for the submit button */
+  color: #1a1a1a; /* Dark text color for the submit button */
+}
+
+.btn-primary:hover {
+  background-color: #cc9900;
+  border-color: #cc9900;
+  color: #1a1a1a;
+}
+
+.alert {
+  background-color: #ffcc00;
+  color: #1a1a1a;
+}
+
+.alert-warning {
+  background-color: #cc9900;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffcc00;
+}
+
+.btn-close {
+  color: #1a1a1a;
+}

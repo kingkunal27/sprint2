@@ -1,0 +1,57 @@
+<div class="container-fluid">
+
+    <div class="form-container">
+  
+      <h2>Add Seat</h2>
+  
+      <form #addSeatForm="ngForm">
+  
+        <div class="mb-3 form-check">
+          <label for="exampleInputSeatNumber1" class="form-label">Seat Number</label>
+          <input type="text" #seatNumber="ngModel" required minlength="2" maxlength="10" [(ngModel)]="seat.seatNumber"
+            name="seatNumber" class="form-control" id="exampleInputSeatNumber1">
+          <div *ngIf="seatNumber.invalid && (seatNumber.dirty || seatNumber.touched)">
+            <small class="text-danger" *ngIf="seatNumber.errors?.['required']">Seat Number is required.</small>
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="exampleInputSeatCategory1" class="form-label">Seat Category</label>
+          <input type="seatCategory" #seatCategory="ngModel" [(ngModel)]="seat.seatCategory" name="seatCategory" class="form-control"
+            id="exampleInputSeatCategory1">
+          <div *ngIf="seatCategory.invalid && (seatCategory.dirty || seatCategory.touched)">
+            <small class="text-danger" *ngIf="seatCategory.errors?.['required']">Seat Category is required</small>
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="exampleInputPrice1" class="form-label">Price</label>
+          <input type="number"  [(ngModel)]="seat.price" name="price" class="form-control"
+            id="exampleInputPrice1">
+          <div *ngIf="addSeatForm.controls['price'].invalid && (addSeatForm.controls['price'].dirty || addSeatForm.controls['price'].touched)">
+            <small class="text-danger" *ngIf="addSeatForm.controls['price'].errors?.['required']">Price is
+              required.</small>
+          </div>
+        </div>
+  
+        <button [disabled]="addSeatForm.form.invalid" (click)="createSeat()" 
+          class="btn btn-primary">Submit</button>
+        <!--{{submitted}}-->
+        
+        <div  *ngIf="submitted" class="alert alert-warning alert-dismissible fade show" role="alert">
+          <small>Seat {{seat.seatNumber}} created successfully.</small>
+          <button type="button" class="btn-close" (click)="reset(addSeatForm)" data-bs-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+      </form>
+  
+    </div>
+  
+  </div>
+  <!--
+    {{addUserForm.value | json}}
+    {{user}}
+    {{user | json}}
+  -->

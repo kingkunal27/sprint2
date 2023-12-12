@@ -1,0 +1,57 @@
+
+<div class="container-fluid">
+
+    <div class="form-container">
+  
+      <h2>Add Booking.</h2>
+  
+      <form #addBookingForm="ngForm">
+  
+        <div class="mb-3 form-check">
+          <label for="exampleInputUserId1" class="form-label">User Id</label>
+          <input type="number" #user_id="ngModel"  [(ngModel)]="booking.user_id"
+            name="user_id" class="form-control" id="exampleInputUserId">
+          <div *ngIf="user_id.invalid && (user_id.dirty || user_id.touched)">
+            <small class="text-danger" *ngIf="user_id.errors?.['required']">User Id is required.</small>
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="exampleInputSeatId1" class="form-label">Seat Id</label>
+          <input type="number" #seatId="ngModel" [(ngModel)]="booking.seatId" name="seatId" class="form-control"
+            id="exampleInputSeatId1">
+          <div *ngIf="seatId.invalid && (seatId.dirty || seatId.touched)">
+            <small class="text-danger" *ngIf="seatId.errors?.['required']">Seat Id is required</small>
+          </div>
+        </div>
+  
+        <div class="mb-3">
+            <label for="exampleInputEventId1" class="form-label">Event Id</label>
+            <input type="number" #eventId="ngModel" [(ngModel)]="booking.eventId" name="eventId" class="form-control"
+              id="exampleInputEventId1">
+            <div *ngIf="eventId.invalid && (eventId.dirty || eventId.touched)">
+              <small class="text-danger" *ngIf="eventId.errors?.['required']">Event Id is required</small>
+            </div>
+          </div>
+  
+        <button [disabled]="addBookingForm.form.invalid" (click)="createBooking()" 
+          class="btn btn-primary">Submit</button>
+        <!--{{submitted}}-->
+        
+        <div  *ngIf="submitted" class="alert alert-warning alert-dismissible fade show" role="alert">
+          <small>Booking {{booking.booking_id}} created successfully.</small>
+          <button type="button" class="btn-close" (click)="reset(addBookingForm)" data-bs-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+      </form>
+  
+    </div>
+  
+  </div>
+  <!--
+    {{addUserForm.value | json}}
+    {{user}}
+    {{user | json}}
+  -->

@@ -1,0 +1,50 @@
+.container-fluid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #333; 
+   color: #fff;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0px; /* Adjust margin from the top based on your navbar height */
+  }
+  
+  th, td {
+    border: 1px solid #555; /* Table border color */
+    padding: 8px;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  th {
+    background-color: #333; /* Dark header background color */
+    color: #ffcc00; /* Header text color */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #444; /* Dark background color for even rows */
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #555; /* Dark background color for odd rows */
+  }
+  
+  /* Hover effect for rows */
+  tr:hover {
+    background-color: #666; /* Dark background color on hover */
+    cursor: pointer;
+  }
+  
+  /* Style for ticket availability (assuming it's a numerical value) */
+  td:last-child {
+    color: #ffcc00; /* Ticket availability text color */
+    font-weight: bold;
+  }
+  
+  /* Add more styles as needed */

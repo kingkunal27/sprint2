@@ -1,0 +1,65 @@
+<div class="container-fluid">
+
+    <div class="form-container">
+  
+      <h2>Match Event</h2>
+  
+      <form #addEventForm="ngForm">
+  
+        <div class="mb-3 form-check">
+          <label for="exampleInputTitle1" class="form-label">Match Title</label>
+          <input type="text" #title="ngModel" required  [(ngModel)]="matchevent.title"
+            name="title" class="form-control" id="exampleInputUsername1">
+          <div *ngIf="title.invalid && (title.dirty || title.touched)">
+            <small class="text-danger" *ngIf="title.errors?.['required']">Title is required.</small>
+          </div>
+        </div>
+
+        <div class="mb-3 form-check">
+            <label for="exampleInputVenue1" class="form-label">Venue</label>
+            <input type="text" #venue="ngModel" required  [(ngModel)]="matchevent.venue"
+              name="venue" class="form-control" id="exampleInputVenue1">
+            <div *ngIf="venue.invalid && (venue.dirty || venue.touched)">
+              <small class="text-danger" *ngIf="venue.errors?.['required']">Venue is required.</small>
+            </div>
+          </div>
+  
+          <div class="mb-3 form-check">
+            <label for="exampleInputTeamsPlaying1" class="form-label">Teams PLaying</label>
+            <input type="text" #teamsPlaying="ngModel" required  [(ngModel)]="matchevent.teamsPlaying"
+              name="teamsPlaying" class="form-control" id="exampleInputTeamsPlaying1">
+            <div *ngIf="teamsPlaying.invalid && (teamsPlaying.dirty || teamsPlaying.touched)">
+              <small class="text-danger" *ngIf="teamsPlaying.errors?.['required']">Teams Playing is required.</small>
+            </div>
+          </div>
+  
+          <div class="mb-3 form-check">
+            <label for="exampleInputTicketAvailability1" class="form-label">Tickets Availability</label>
+            <input type="number" #ticketAvailability="ngModel" required  [(ngModel)]="matchevent.ticketAvailability"
+              name="ticketAvailability" class="form-control" id="exampleInputTicketAvailability1">
+            <div *ngIf="ticketAvailability.invalid && (ticketAvailability.dirty || ticketAvailability.touched)">
+              <small class="text-danger" *ngIf="ticketAvailability.errors?.['required']">Teams Availability is required.</small>
+            </div>
+          </div>
+
+        <button [disabled]="addEventForm.form.invalid" (click)="createEvent()" 
+          class="btn btn-primary">Submit</button>
+        <!--{{submitted}}-->
+        
+        <div  *ngIf="submitted" class="alert alert-warning alert-dismissible fade show" role="alert">
+          <small>Event {{matchevent.title}} created successfully.</small>
+          <button type="button" class="btn-close" (click)="reset(addEventForm)" data-bs-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+      </form>
+  
+    </div>
+  
+  </div>
+  <!--
+    {{addUserForm.value | json}}
+    {{user}}
+    {{user | json}}
+  -->

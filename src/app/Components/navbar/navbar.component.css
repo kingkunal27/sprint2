@@ -1,0 +1,23 @@
+.navbar-nav .nav-item{
+    margin-right: 65px;
+}
+
+.navbar-brand{
+    margin-right: 155px;
+}
+
+.dropdown-menu {
+    margin-top: 10px;
+}
+
+
+.navbar-toggler{
+    margin-right: 15px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}

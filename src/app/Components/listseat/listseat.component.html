@@ -1,0 +1,10 @@
+<div class="container-fluid">
+<table>
+    <tr>
+        <th>Seat Id</th><th>Seat Number</th><th>Seat Category</th><th>Seat Price</th>
+    </tr>
+    <tr *ngFor="let sts of seats">
+        <td>{{sts.seatId}}</td><td>{{sts.seatNumber}}</td><td>{{sts.seatCategory}}</td><td>{{sts.price}}</td>
+    </tr>
+</table>
+</div>
